@@ -1,0 +1,312 @@
+/* Base Styles */
+:root {
+    --primary: #9b59b6;
+    --primary-dark: #8e44ad;
+    --secondary: #3498db;
+    --accent: #2ecc71;
+    --warning: #e74c3c;
+    --bg-dark: #121212;
+    --bg-darker: #0a0a0a;
+    --bg-card: rgba(20, 20, 40, 0.8);
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-muted: #6c6c6c;
+    --border-color: rgba(155, 89, 182, 0.3);
+    --glow: 0 0 20px rgba(155, 89, 182, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* App Container */
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-shadow: var(--glow);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+/* Cards */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(155, 89, 182, 0.3);
+}
+
+.card h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--glow);
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.btn:disabled {
+    background: var(--text-muted);
+    cursor: not-allowed;
+    transform: scale(1);
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: var(--secondary);
+}
+
+.btn-secondary:hover {
+    background: #2980b9;
+}
+
+.btn-mint {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+
+.btn-mint:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #27ae60);
+}
+
+/* Wallet Info */
+.wallet-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.wallet-info p {
+    font-size: 1.1rem;
+    word-break: break-all;
+    text-align: center;
+}
+
+/* Price Display */
+.price-display {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#eth-price {
+    font-size: 2rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+#price-timestamp {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Balance Display */
+.balance-display {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.balance-display p {
+    font-size: 1.2rem;
+}
+
+/* Mint Info */
+.mint-info {
+    margin-bottom: 20px;
+}
+
+.mint-info p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Countdown */
+.countdown-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.countdown {
+    background: rgba(155, 89, 182, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px;
+    min-width: 80px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.countdown span:first-child {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+#progress-text {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Transaction Status */
+#tx-status {
+    color: var(--text-secondary);
+    margin-top: 10px;
+    text-align: center;
+}
+
+#tx-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Status Messages */
+#mint-status {
+    margin-top: 10px;
+    text-align: center;
+    min-height: 20px;
+}
+
+#mint-status.error {
+    color: var(--warning);
+}
+
+#mint-status.success {
+    color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .countdown {
+        min-width: 60px;
+        padding: 10px;
+    }
+    
+    .countdown span:first-child {
+        font-size: 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(155, 89, 182, 0);
+    }
+}
+
+.card {
+    animation: pulse 4s infinite;
+}
+
+/* Loading State */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}

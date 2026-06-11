@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atharium Token DApp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.7.1/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>ATHARIUM TOKEN</h1>
+            <p class="subtitle">Sepolia Testnet DApp</p>
+        </header>
+
+        <main>
+            <!-- Wallet Connection -->
+            <section class="card">
+                <h2>🔌 Wallet Connection</h2>
+                <div class="wallet-info">
+                    <p id="wallet-address">Not connected</p>
+                    <button id="connect-wallet" class="btn">Connect Wallet</button>
+                    <button id="disconnect-wallet" class="btn btn-secondary" style="display: none;">Disconnect</button>
+                </div>
+            </section>
+
+            <!-- ETH Price -->
+            <section class="card">
+                <h2>📈 ETH/USD Price</h2>
+                <div class="price-display">
+                    <p id="eth-price">Loading...</p>
+                    <p id="price-timestamp"></p>
+                </div>
+            </section>
+
+            <!-- Token Balance -->
+            <section class="card">
+                <h2>💎 Token Balance</h2>
+                <div class="balance-display">
+                    <p><strong>Your Balance:</strong> <span id="user-balance">0 ATH</span></p>
+                    <p><strong>Total Supply:</strong> <span id="total-supply">0 ATH</span></p>
+                </div>
+            </section>
+
+            <!-- Mint Section -->
+            <section class="card">
+                <h2>⏳ Annual Mint</h2>
+                <div class="mint-info">
+                    <p><strong>Next Mint Available:</strong> <span id="next-mint-time">Loading...</span></p>
+                    <div class="countdown-container">
+                        <div class="countdown">
+                            <span id="countdown-days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown">
+                            <span id="countdown-hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown">
+                            <span id="countdown-mins">00</span>
+                            <span class="countdown-label">Mins</span>
+                        </div>
+                        <div class="countdown">
+                            <span id="countdown-secs">00</span>
+                            <span class="countdown-label">Secs</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <p id="progress-text">0% complete</p>
+                </div>
+                <button id="mint-button" class="btn btn-mint" disabled>Mint 100,000 ATH</button>
+                <p id="mint-status"></p>
+            </section>
+
+            <!-- Transaction Status -->
+            <section class="card" id="tx-status-container" style="display: none;">
+                <h2>📜 Transaction Status</h2>
+                <p id="tx-status"></p>
+                <a id="tx-link" href="#" target="_blank" class="btn btn-secondary">View on Etherscan</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>Contract Address: <a href="https://sepolia.etherscan.io/address/0xd9145CCE52D386f254917e481eB44e9943F39138" target="_blank">0xd9145CCE52D386f254917e481eB44e9943F39138</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
